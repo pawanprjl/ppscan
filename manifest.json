@@ -1,0 +1,52 @@
+{
+    "name": "PP Scanner",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Client Side Prototype Pollution Scanner",
+    "icons": {
+        "48": "icons/default_icon.png"
+    },
+    "options_ui": {
+        "page": "pages/options.html",
+        "browser_style": true
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "<all_urls>",
+        "webRequest",
+        "webRequestBlocking",
+        "activeTab"
+    ],
+    "background": {
+        "page": "pages/background.html",
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "scripts/content_script.js"
+            ],
+            "all_frames": true
+        }
+    ],
+    "web_accessible_resources": [
+        "pages/iframe.html",
+        "scripts/exp.js"
+    ],
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": {
+            "48": "icons/default_icon.png"
+        },
+        "default_popup": "pages/popup.html"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "ppscan@sanzaaltech.com"
+        }
+    }
+}
