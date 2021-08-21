@@ -82,7 +82,7 @@ const download = (url) => {
     });
 }
 
-const check = ({ requestUri, initiator }) => {
+const check = ({ requestUri, originUrl }) => {
     if (DEBUG) {
         console.log(`[%] ${requestUri}`);
     }
@@ -111,7 +111,7 @@ const check = ({ requestUri, initiator }) => {
                     return;
                 }
 
-                found.add(JSON.stringify({ domain: initiator, type: name, file: requestUri, lineCol }));
+                found.add(JSON.stringify({ domain: originUrl, type: name, file: requestUri, lineCol }));
                 setBadgeCount(found.size);
             });
         });
@@ -123,9 +123,9 @@ const filter = {
     types: ["script"]
 };
 
-const scan = ({ method, url, initiator }) => {
+const scan = ({ method, url, originUrl }) => {
     if (method == "GET") {
-        check({ requestUri: url, initiator });
+        check({ requestUri: url, originUrl });
     }
 }
 

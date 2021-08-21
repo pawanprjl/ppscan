@@ -1,0 +1,15 @@
+# PPScan
+
+Client Side Prototype pollution scanner
+
+### How to use ?
+1. Clone the repo
+2. Install add-on
+3. Visit the website you want to test
+
+It only checks for vulnerable location parsers.
+
+> Note: This is a firefox version of https://github.com/msrkp/PPScan
+
+### Found PP ? What's Next ?
+Check for the gadgets here https://github.com/BlackFan/client-side-prototype-pollution

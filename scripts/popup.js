@@ -90,6 +90,7 @@ function listFound(found) {
 
     found.forEach((str) => {
         const line = JSON.parse(str)
+        console.log(line)
         const tr = document.createElement("tr");
         tr.innerHTML = `<td><a target="_blank" href="${line['domain']}">${new URL(line['domain']).hostname}</a></td><td>${line['type']}</td><td><a target="_blank" href="${line['file']}">${line['file']}:${line['lineCol']}</a></td>`;
         foundList.appendChild(tr);
